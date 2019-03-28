@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const router = express.Router();
 const port = process.env.PORT || 3000;
+const url = (`mongodb://${process.env.DB_USER}:${process.env.DB_PWD}@${process.env.DB_HOST}/admin`);
 var fs = require('fs');
 
 // Upload---------------------------------------------------------------------------------------------------------------
@@ -25,81 +26,30 @@ const storage = multer.diskStorage({
 const upload = multer ({
     storage: storage,
 }).single('image');
+
 // ---------------------------------------------------------------------------------------------------------------------
-
-const Schema = mongoose.Schema;
-const demoSchema = new Schema({
-    category: String,
-    title: String,
-    description: String,
-    imagePath: String,
-    thumbnailPath: String,
-    /*
-    coordinates: {
-        latitude: String,
-        longitude: String
-    }
-    */
-});
-
-const Demo = mongoose.model('Demo', demoSchema);
 
 console.log(process.env);
 
 // Connect to mongodb
-mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PWD}@${process.env.DB_HOST}/admin`).then(() => {
+mongoose.connect(url, {userNewUrlParser: true}).then(() => {
     console.log(`Listening on port ${port}`);
     app.listen(process.env.APP_PORT);
 }, err => {
     console.log('Connection to db failed: ' + err);
 });
 
-/*
-const dataJson = './data.json';
-function base64_encode(file) {
-    // read binary data
-    const bitmap = fs.readFileSync(file);
-    // convert binary data to base64 encoded string
-    return new Buffer(bitmap).toString('base64');
-}
-*/
+// ---------------------------------------------------------------------------------------------------------------------
 
 app.use(express.static('public'));
 
 app.get('/', function(req, res){
-    //res.sendStatus(200);
-    //res.render('index.html');
     console.log(req, res);
     console.log(req.query.myParam);
     Demo.create({ test: 'Hello', more: 7}).then(post => {
         console.log(post.id);
         res.send('Created dummy data? ' + post)
     })
-});
-
-router.get('/view', (req, res) => {
-    res.sendStatus(200);
-});
-
-app.get('/add', function(req, res){
-    res.sendStatus(200);
-    console.log(req, res);
-    console.log(req.query.myParam);
-});
-
-app.post('/upload', function(req, res, next){
-    upload(req, res, (err) => {
-    if(err){
-        res.sendStatus(400);
-    } else{
-        if (req.file === undefined){
-            res.sendStatus(404);
-        } else {
-            console.log(req.file);
-            next();
-        }
-    }
-    });
 });
 
 // Middleware for thumbnails--------------------------------------------------------------------------------------------
@@ -132,3 +82,5 @@ app.use('/upload', function(req, res){
 //----------------------------------------------------------------------------------------------------------------------
 
 //app.listen(port, () => console.log(`Listening on port ${port}`));
+// http://localhost:3000/cats/...
+app.use('/cats', catRouters);
