@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="634a6fd1-79e4-466d-8708-1c4113530a5b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/catController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/fileController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/cats.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/fileUpload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/example.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/insert.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/catRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/fileRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/thumbnail.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/thumbnail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/upload.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/upload.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/medium/photo400x400.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/medium/photo400x400.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/small/photo200x200.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/small/photo200x200.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/catController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/catController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/catRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/catRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routers/index.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
+            <state relative-caret-position="245">
+              <caret line="86" column="34" selection-start-line="86" selection-start-column="34" selection-end-line="86" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -49,19 +38,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routers/fileRouter.js">
+        <entry file="file://$PROJECT_DIR$/routers/catRouter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="897">
-              <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+            <state relative-caret-position="222">
+              <caret line="100" column="24" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routers/catRouter.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controllers/catController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2507">
-              <caret line="109" column="24" selection-start-line="109" selection-start-column="24" selection-end-line="109" selection-end-column="24" />
+            <state relative-caret-position="314">
+              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
             </state>
           </provider>
         </entry>
@@ -71,15 +60,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="61">
               <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/catController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
             </state>
           </provider>
         </entry>
@@ -112,7 +92,6 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/public/map.js" />
         <option value="$PROJECT_DIR$/public/css/main.css" />
-        <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/routers/upload.js" />
         <option value="$PROJECT_DIR$/modules/database.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
@@ -121,13 +100,14 @@
         <option value="$PROJECT_DIR$/public/data.json" />
         <option value="$PROJECT_DIR$/public/css/upload.css" />
         <option value="$PROJECT_DIR$/models/fileUpload.js" />
-        <option value="$PROJECT_DIR$/routers/fileRouter.js" />
         <option value="$PROJECT_DIR$/modules/thumbnail.js" />
         <option value="$PROJECT_DIR$/modules/map.js" />
         <option value="$PROJECT_DIR$/controllers/fileController.js" />
-        <option value="$PROJECT_DIR$/routers/catRouter.js" />
-        <option value="$PROJECT_DIR$/controllers/catController.js" />
+        <option value="$PROJECT_DIR$/routers/fileRouter.js" />
         <option value="$PROJECT_DIR$/routers/index.js" />
+        <option value="$PROJECT_DIR$/routers/catRouter.js" />
+        <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/controllers/catController.js" />
       </list>
     </option>
   </component>
@@ -190,11 +170,11 @@
       <recent name="C:\Users\kendy\Desktop\Koulu\Server-side Scripting Frameworks\SSSF-2019\week1assignment" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kendy\Desktop\Koulu\Server-side Scripting Frameworks\SSSF-2019\week1assignment" />
       <recent name="C:\Users\kendy\Desktop\Koulu\Server-side Scripting Frameworks\SSSF-2019\week1assignment\public" />
       <recent name="C:\Users\kendy\Desktop\Koulu\Server-side Scripting Frameworks\SSSF-2019\week1assignment\modules" />
       <recent name="C:\Users\kendy\Desktop\Koulu\Server-side Scripting Frameworks\SSSF-2019\week1assignment\routers" />
       <recent name="C:\Users\kendy\Desktop\Koulu\Server-side Scripting Frameworks\SSSF-2019\week1assignment\public\css" />
-      <recent name="C:\Users\kendy\Desktop\Koulu\Server-side Scripting Frameworks\SSSF-2019\week1assignment\public\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -220,12 +200,12 @@
       <option name="presentableId" value="Default" />
       <updated>1552926661949</updated>
       <workItem from="1552926663568" duration="65667000" />
-      <workItem from="1553497906991" duration="7240000" />
+      <workItem from="1553497906991" duration="9969000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72907000" />
+    <option name="totallyTimeSpent" value="75636000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -373,31 +353,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/thumbnail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routers/fileRouter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/fileController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61">
           <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routers/catRouter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2507">
-          <caret line="109" column="24" selection-start-line="109" selection-start-column="24" selection-end-line="109" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -408,13 +367,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/catController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
         </state>
       </provider>
     </entry>
@@ -432,10 +384,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routers/index.js">
+    <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
+        <state relative-caret-position="245">
+          <caret line="86" column="34" selection-start-line="86" selection-start-column="34" selection-end-line="86" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routers/fileRouter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/thumbnail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="805">
+          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routers/catRouter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="100" column="24" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/catController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
         </state>
       </provider>
     </entry>

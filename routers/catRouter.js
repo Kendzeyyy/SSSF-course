@@ -16,15 +16,6 @@ router.get('/all', (req, res) => {
 router.post('/add', bodyParser.urlencoded({extended: true}), (req, res) => {
     const data = req.body;
     console.log(data);
-    /*
-    Cat.create({
-        name: req.body.name,
-        age: req.body.age,
-        gender: req.body.gender,
-        color: req.body.color,
-        weight: req.body.weight
-    });
-    */
     catController.cat_create_post(data).then((result) => {
         res.send(result);
     });
@@ -46,8 +37,8 @@ router.post('/update', bodyParser.urlencoded({extended: true}), (req, res) => {
     Cat.find()
         .where('name').equals(req.body.name)
         .then(
-            d =>{
-                console.log('THIS IS THE D' + d);
+            id =>{
+                console.log('THIS IS THE ID' + id);
                 Cat.updateOne({name: req.body.name}, {
                     name: req.body.name,
                     age: req.body.age,
@@ -93,9 +84,9 @@ router.put('/update/:id', (req, res) => {
 });
 
 // delete by id
-router.delete('/delete/:id', (req, res) => {
+router.post('/delete/:id', (req, res) => {
     Cat.findByIdAndRemove({_id: req.params.id}).then(function (cat) {
-        res.send(cat)
+        res.send(cat);
     });
 });
 

@@ -11,7 +11,15 @@ exports.cat_list_get = () => {
 };
 
 exports.cat_create_post = (data) => {
+    console.log(data);
     return Cat.create(data).then((item) => {
+        Cat.create({
+            name: req.body.name,
+            age: req.body.age,
+            gender: req.body.gender,
+            color: req.body.color,
+            weight: req.body.weight
+        });
         return {status: 'Cat created: ' + item.id};
     }).catch((err) => {
         console.log(err);

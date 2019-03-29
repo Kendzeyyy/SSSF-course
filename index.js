@@ -84,3 +84,4 @@ app.use('/upload', function(req, res){
 //app.listen(port, () => console.log(`Listening on port ${port}`));
 // http://localhost:3000/cats/...
 app.use('/cats', catRouters);
+app.use(express.static('public'));

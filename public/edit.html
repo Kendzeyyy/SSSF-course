@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit cat</title>
+</head>
+<body>
+<!-- Navigation -->
+<div class="container">
+    <div class="top-bar">
+        <ul class="navbar">
+            <li class="nav-View"><a href="./index.html">View</a></li>
+            <li class="nav-Upload"><a href="./upload.html">Add</a></li>
+            <li class="nav-Upload"><a href="./insert.html">Insert</a></li>
+            <li class="nav-Edit"><a href="./edit.html">Edit</a></li>
+            <li class="nav-Delete"><a href="./delete.html">Delete</a></li>
+        </ul>
+    </div>
+</div>
+
+<form action="/update" method="post" enctype="multipart/form-data">
+<h1>Edit cat</h1>
+<form action="update" method="POST">
+<pre>
+  Name:   <input type="text" name="name" placeholder="Name">
+  Genre:  <input type="text" name="genre" placeholder="female/male">
+  Color:  <input type="text" name="color" placeholder="black and white">
+  Age:    <input type="number" name="age" placeholder="10">
+  Weight: <input type="number" name="weight" placeholder="15">
+  <input type="submit">
+</pre>
+</form>
+</body>
+</html>
