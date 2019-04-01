@@ -6,9 +6,19 @@ const sharp = require('sharp');
 const mongoose = require('mongoose');
 const path = require('path');
 const router = express.Router();
-const port = process.env.PORT || 3000;
+const https = require('https');
+const fs = require('fs');
+const sslkey = fs.readFileSync('ssl-key.pem');
+const sslcert = fs.readFileSync('ssl-cert.pem');
 const url = (`mongodb://${process.env.DB_USER}:${process.env.DB_PWD}@${process.env.DB_HOST}/admin`);
-var fs = require('fs');
+
+
+const options = {
+    key: sslkey,
+    cert: sslcert
+};
+
+console.log(process.env);
 
 // Upload---------------------------------------------------------------------------------------------------------------
 const multer = require('multer');
@@ -29,12 +39,10 @@ const upload = multer ({
 
 // ---------------------------------------------------------------------------------------------------------------------
 
-console.log(process.env);
-
 // Connect to mongodb
 mongoose.connect(url, {userNewUrlParser: true}).then(() => {
-    console.log(`Listening on port ${port}`);
-    app.listen(process.env.APP_PORT);
+    console.log('Connected successfully.');
+    https.createServer(options, app).listen(3000);
 }, err => {
     console.log('Connection to db failed: ' + err);
 });
@@ -83,5 +91,5 @@ app.use('/upload', function(req, res){
 
 //app.listen(port, () => console.log(`Listening on port ${port}`));
 // http://localhost:3000/cats/...
-app.use('/cats', catRouters);
+//app.use('/cats', catRouters);
 app.use(express.static('public'));
