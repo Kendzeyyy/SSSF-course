@@ -107,9 +107,23 @@ app.get('/', function (req, res) {
     res.render('index', lang[req.query.lang]);
 });
 
-app.get('/add', function (req, res) {
-    res.render('index', { title: 'Hey', message: 'Hello there!' });
+app.get('/home', (req, res) => {
+    if([req.query.lang === undefined]){
+        req.query.lang = 'en';
+    }
+    res.render('index', lang[req.query.lang]);
 });
+
+app.get('/add', function (req, res) {
+    res.render('add', { title: 'Hey', message: 'Hello there!' });
+});
+
+app.get('/update', (req, res) => {
+    res.render('update', { title: 'Hey', message: 'Hello there from /update!' });
+});
+
+
+
 
 //app.listen(port, () => console.log(`Listening on port ${port}`));
 // http://localhost:3000/cats/...
