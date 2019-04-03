@@ -1,0 +1,15 @@
+{
+  "en": {
+    "title": "Hey",
+    "message": "Hello there!",
+    "add_title": "Add cats",
+    "add_message": "Add cats to database"
+  },
+
+  "fi": {
+    "title": "Moro",
+    "message": "Heippa sinne!",
+    "add_title": "Lisää kissoja",
+    "add_message": "Lisää kissoja tietokantaan"
+  }
+}

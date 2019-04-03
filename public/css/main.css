@@ -6,6 +6,10 @@ html{
     background-size: cover;
 }
 
+.login{
+    background-color: #4CAF50;
+}
+
 body {
     font-family: sans-serif;
     padding: 0;

@@ -5,11 +5,15 @@ const app = express();
 const sharp = require('sharp');
 const mongoose = require('mongoose');
 const path = require('path');
-const router = express.Router();
+const catRouter = require('./routers/catRouter');
 const https = require('https');
 const fs = require('fs');
 const sslkey = fs.readFileSync('ssl-key.pem');
 const sslcert = fs.readFileSync('ssl-cert.pem');
+const lang = require('./languages/lang');
+
+app.set('view engine', 'pug');
+app.use(express.static('public'));
 const url = (`mongodb://${process.env.DB_USER}:${process.env.DB_PWD}@${process.env.DB_HOST}/admin`);
 
 
@@ -89,7 +93,25 @@ app.use('/upload', function(req, res){
 });
 //----------------------------------------------------------------------------------------------------------------------
 
+app.use((req, res, next) => {
+    if([req.query.lang === undefined]) {
+        req.query.lang = 'en';
+    }
+    next();
+});
+
+app.get('/', function (req, res) {
+    if([req.query.lang === undefined]){
+        req.query.lang = 'en';
+    }
+    res.render('index', lang[req.query.lang]);
+});
+
+app.get('/add', function (req, res) {
+    res.render('index', { title: 'Hey', message: 'Hello there!' });
+});
+
 //app.listen(port, () => console.log(`Listening on port ${port}`));
 // http://localhost:3000/cats/...
-//app.use('/cats', catRouters);
+app.use('/cats', catRouter);
 app.use(express.static('public'));
