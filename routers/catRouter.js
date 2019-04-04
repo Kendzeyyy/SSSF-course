@@ -5,14 +5,14 @@ const catController = require('../controllers/catController');
 const bodyParser = require('body-parser');
 const Cat = require('../models/cats');
 
-// get all cats
+// get all cats---------------------------------------------------------------------------------------------------------
 router.get('/all', (req, res) => {
     catController.cat_list_get().then((result) => {
         res.send(result);
     });
 });
 
-// create new cat
+// create new cat-------------------------------------------------------------------------------------------------------
 router.post('/add', bodyParser.urlencoded({extended: true}), (req, res) => {
     const data = req.body;
     console.log(data);
@@ -22,7 +22,7 @@ router.post('/add', bodyParser.urlencoded({extended: true}), (req, res) => {
     res.send({type: 'POST'});
 });
 
-// update
+// update cat-----------------------------------------------------------------------------------------------------------
 router.post('/update', bodyParser.urlencoded({extended: true}), (req, res) => {
     console.log('reqbody: ' + req.body);
     console.log('reqbodyname: ' + req.body.name);
@@ -55,14 +55,14 @@ router.post('/update', bodyParser.urlencoded({extended: true}), (req, res) => {
             });
 });
 
-// get number of cats
+// get number of cats---------------------------------------------------------------------------------------------------
 router.get('/number', (req, res) => {
     catController.cat_number_get().then((result) => {
         res.send(`Got ${result} cats`);
     });
 });
 
-// sorting cats
+// sorting cats---------------------------------------------------------------------------------------------------------
 router.get('/sort', (req, res) => {
     catController.cat_sort_get().then((result) => {
         let text = '';
@@ -73,7 +73,7 @@ router.get('/sort', (req, res) => {
     });
 });
 
-// update by id
+// update by id---------------------------------------------------------------------------------------------------------
 router.put('/update/:id', (req, res) => {
     Cat.findByIdAndUpdate({_id: req.params.id}, req.body).then(function () {
         Cat.findOne({_id: req.params.id}).then(function (cat) {
@@ -83,7 +83,7 @@ router.put('/update/:id', (req, res) => {
     //res.send({type: 'UPDATE'});
 });
 
-// delete by id
+// delete by id---------------------------------------------------------------------------------------------------------
 router.post('/delete/:id', (req, res) => {
     Cat.findByIdAndRemove({_id: req.params.id}).then(function (cat) {
         res.send(cat);

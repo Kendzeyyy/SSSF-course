@@ -1,0 +1,9 @@
+extends layout
+block content
+  form(action='/delete' method='post' enctype='multipart/form-data')
+  h1 Delete cat
+  form
+    | ID:
+    input(type='text', name='id', placeholder='5c9ddeb1...')
+    br
+    input(type='submit')

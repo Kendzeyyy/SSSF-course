@@ -16,7 +16,6 @@ app.set('view engine', 'pug');
 app.use(express.static('public'));
 const url = (`mongodb://${process.env.DB_USER}:${process.env.DB_PWD}@${process.env.DB_HOST}/admin`);
 
-
 const options = {
     key: sslkey,
     cert: sslcert
@@ -91,8 +90,7 @@ app.use('/upload', function(req, res){
         .toFile('public/data.json', (err) => {
         });
 });
-//----------------------------------------------------------------------------------------------------------------------
-
+//Pug-------------------------------------------------------------------------------------------------------------------
 app.use((req, res, next) => {
     if([req.query.lang === undefined]) {
         req.query.lang = 'en';
@@ -119,11 +117,12 @@ app.get('/add', function (req, res) {
 });
 
 app.get('/update', (req, res) => {
-    res.render('update', { title: 'Hey', message: 'Hello there from /update!' });
+    res.render('update', { title: 'Hey', message: '/update' });
 });
 
-
-
+app.get('/delete', (req, res) => {
+    res.render('delete', { title: 'Hey', message: '/delete' });
+});
 
 //app.listen(port, () => console.log(`Listening on port ${port}`));
 // http://localhost:3000/cats/...

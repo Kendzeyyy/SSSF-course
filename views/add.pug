@@ -1,5 +1,6 @@
 extends layout
 block content
+  form(action='cat', method='post', enctype='multipart/form-data')
   h1 Add cat
   form
     | Name:
@@ -12,10 +13,9 @@ block content
     input(type='text', name='color', placeholder='black and white')
     br
     |   Age:
-    input(type='number', name='age')
+    input(type='number', name='age', placeholder='5')
     br
     |   Weight:
-    input(type='number', name='weight')
+    input(type='number', name='weight', placeholder='10')
     br
     input(type='submit')
-    button

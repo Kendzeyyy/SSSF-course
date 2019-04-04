@@ -1,5 +1,6 @@
 extends layout.pug
 block content
+  form(action='/update', method='post', enctype='multipart/form-data')
   h1 Edit cat
   form
     | Name:
@@ -18,4 +19,3 @@ block content
     input(type='number', name='weight')
     br
     input(type='submit')
-    button
