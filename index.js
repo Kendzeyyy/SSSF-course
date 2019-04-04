@@ -63,12 +63,28 @@ app.get('/', function(req, res){
     })
 });
 
+app.post('/upload', function(req, res, next){
+    upload(req, res, (err) => {
+        if(err){
+            res.sendStatus(400);
+        } else{
+            if (req.file === undefined){
+                res.sendStatus(404);
+            } else {
+                console.log(req.file);
+                next();
+            }
+        }
+    });
+    res.redirect('/home');
+});
+
 // Middleware for thumbnails--------------------------------------------------------------------------------------------
 app.use('/upload', function(req, res, next) {
     // do small 200x200 thumbnail
     sharp(req.file.path)
         .resize(200, 200)
-        .toFile('public/img/small/photo200x200.jpg', (err) => {
+        .toFile('public/img/small/' + Date.now() + '200x200.jpg', (err) => {
         });
     next();
 });
@@ -77,7 +93,7 @@ app.use('/upload', function(req, res, next) {
     // do medium 400x400 thumbnail
     sharp(req.file.path)
         .resize(400, 400)
-        .toFile('public/img/medium/photo400x400.jpg', (err) => {
+        .toFile('public/img/medium/' + Date.now() + '400x400.jpg', (err) => {
         });
     res.send(req.file);
     next();
@@ -108,6 +124,7 @@ app.get('/', function (req, res) {
 app.get('/home', (req, res) => {
     if([req.query.lang === undefined]){
         req.query.lang = 'en';
+        //req.query.lang = 'fi';
     }
     res.render('index', lang[req.query.lang]);
 });
