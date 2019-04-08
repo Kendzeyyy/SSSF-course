@@ -40,9 +40,7 @@ const upload = multer ({
     storage: storage,
 }).single('image');
 
-// ---------------------------------------------------------------------------------------------------------------------
-
-// Connect to mongodb
+// Connect to mongodb---------------------------------------------------------------------------------------------------
 mongoose.connect(url, {userNewUrlParser: true}).then(() => {
     console.log('Connected successfully.');
     https.createServer(options, app).listen(3000);
@@ -60,7 +58,7 @@ app.get('/', function(req, res){
     Demo.create({ test: 'Hello', more: 7}).then(post => {
         console.log(post.id);
         res.send('Created dummy data? ' + post)
-    })
+    });
 });
 
 app.post('/upload', function(req, res, next){
@@ -84,7 +82,7 @@ app.use('/upload', function(req, res, next) {
     // do small 200x200 thumbnail
     sharp(req.file.path)
         .resize(200, 200)
-        .toFile('public/img/small/' + Date.now() + '200x200.jpg', (err) => {
+        .toFile('public/img/small/' + Date.now() + '_200x200.jpg', (err) => {
         });
     next();
 });
@@ -93,7 +91,7 @@ app.use('/upload', function(req, res, next) {
     // do medium 400x400 thumbnail
     sharp(req.file.path)
         .resize(400, 400)
-        .toFile('public/img/medium/' + Date.now() + '400x400.jpg', (err) => {
+        .toFile('public/img/medium/' + Date.now() + '_400x400.jpg', (err) => {
         });
     res.send(req.file);
     next();
@@ -106,6 +104,7 @@ app.use('/upload', function(req, res){
         .toFile('public/data.json', (err) => {
         });
 });
+
 //Pug-------------------------------------------------------------------------------------------------------------------
 app.use((req, res, next) => {
     if([req.query.lang === undefined]) {
@@ -115,10 +114,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', function (req, res) {
-    if([req.query.lang === undefined]){
-        req.query.lang = 'en';
-    }
-    res.render('index', lang[req.query.lang]);
+    res.sendStatus(200);
 });
 
 app.get('/home', (req, res) => {
@@ -126,19 +122,19 @@ app.get('/home', (req, res) => {
         req.query.lang = 'en';
         //req.query.lang = 'fi';
     }
-    res.render('index', lang[req.query.lang]);
+    res.render('index.pug', lang[req.query.lang]);
 });
 
 app.get('/add', function (req, res) {
-    res.render('add', { title: 'Hey', message: 'Hello there!' });
+    res.render('add.pug', { title: 'Hey', message: 'Hello there!' });
 });
 
 app.get('/update', (req, res) => {
-    res.render('update', { title: 'Hey', message: '/update' });
+    res.render('update.pug', { title: 'Hey', message: '/update' });
 });
 
 app.get('/delete', (req, res) => {
-    res.render('delete', { title: 'Hey', message: '/delete' });
+    res.render('delete.pug', { title: 'Hey', message: '/delete' });
 });
 
 //app.listen(port, () => console.log(`Listening on port ${port}`));

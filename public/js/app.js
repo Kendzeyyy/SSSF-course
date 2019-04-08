@@ -4,6 +4,7 @@ fetch('./cats/all').then((response) => {
 }).then ((json) => {
     console.log(json);
     json.forEach((cat) => {
-        document.querySelector('#cats').innerHTML = `<li>${cat.name}</li>`;
+        // all cats from list
+        document.querySelector('#cats').innerHTML += `<li>${cat.name}</li><br>`;
     });
 });

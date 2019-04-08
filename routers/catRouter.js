@@ -80,7 +80,7 @@ router.put('/update/:id', (req, res) => {
             res.send(cat);
         });
     });
-    //res.send({type: 'UPDATE'});
+    res.send({type: 'UPDATE'});
 });
 
 // delete by id---------------------------------------------------------------------------------------------------------
